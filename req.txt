@@ -1,0 +1,27 @@
+- React Framework
+- API: https://run.mocky.io/v3/ec196a02-aaf4-4c91-8f54-21e72f241b68
+- https://run.mocky.io/v3/ec196a02-aaf4-4c91-8f54-21e72f241b68
+- Responsive design
+- a header, footer, menu & main display
+- Details such as:
+    Image of the Pizza
+    Name
+    Description
+    Rating Stars
+    Price
+    Type (Vegetarian/Non Vegetarian
+- ‘ Add +’ button :- On click of Add button, A customise popup 
+    will be opened, and user can select Add-on(sizes) and 
+    toppings of that particular item. Add-on and topping can be 
+    single/multiple select based on API response (“isRadio” key).
+- Customers can add more than one quantity
+- User should have an option to sort based on ‘Price’ and 
+  ‘Rating’.
+- User should be able to toggle between Veg and NonVeg
+- There will be two screens, one for listing pizzas, another for 
+  cart items.
+- All selected items with selected add-on/toppings and quantity 
+  will be displayed on the Cart screen. User can edit the 
+  quantity from the cart screen.
+- Bonus: Use Redux for managing API calls and data storage 
+  requirements.

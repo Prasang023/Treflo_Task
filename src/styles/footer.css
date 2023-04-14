@@ -1,0 +1,9 @@
+.footer-container{
+    width: 100%;
+    background-color:#cccccc;
+    bottom: 0;
+    position: absolute;
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+}
