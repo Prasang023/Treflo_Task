@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import { setError } from "./error"
 
 import axios from "axios"
+import { setSuccess } from "./success"
 
 export const getMenu = createAsyncThunk(
   "bucket/getMenu",
@@ -11,7 +12,7 @@ export const getMenu = createAsyncThunk(
         `https://run.mocky.io/v3/ec196a02-aaf4-4c91-8f54-21e72f241b68`
       )
       console.log(response)
-
+      thunkAPI.dispatch(setSuccess("Menu Loaded Successfully"))
       return response.data
     } catch (err) {
       console.log(err)

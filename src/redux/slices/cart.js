@@ -6,61 +6,7 @@ export const cartSlice = createSlice({
   initialState: {
     loading: false,
     error: null,
-    cartItems: [
-      {
-        id: 1,
-        name: "Margherita",
-        description: "A classic delight with 100% Real mozzarella cheese",
-        isVeg: true,
-        rating: 3.5,
-        price: 239,
-        img_url:
-          "https://upload.wikimedia.org/wikipedia/commons/6/6f/Pizza_on_stone.jpg",
-        size: [
-          {
-            isRadio: true,
-            title: "choose size",
-            items: [
-              {
-                size: "Regular"
-              },
-              {
-                size: "Medium"
-              },
-              {
-                size: "Large"
-              }
-            ]
-          }
-        ],
-        toppings: [
-          {
-            isRadio: false,
-            title: "choose topping(s)",
-            items: [
-              {
-                name: "Red Pepper"
-              },
-              {
-                name: "Onion"
-              },
-              {
-                name: "Grilled Mushroom"
-              },
-              {
-                name: "Extra Cheese"
-              },
-              {
-                name: "Black Olive"
-              }
-            ]
-          }
-        ],
-        selectedSize: 0,
-        selectedToppings: [2, 4],
-        quantity: 2
-      }
-    ],
+    cartItems: [],
     itemNo: 0,
     totalAmt: 0
   },
@@ -103,22 +49,6 @@ export const cartSlice = createSlice({
       }
       state.cartItems = tmparr
     }
-  },
-  extraReducers: (builder) => {
-    function onPending(state, action) {
-      state.loading = true
-      state.error = null
-    }
-    function onRejection(state, action) {
-      state.loading = false
-      state.error = action.payload
-    }
-    // builder.addCase(getMenu.fulfilled, (state, action) => {
-    //   state.menuItems = action.payload
-    //   state.loading = false
-    // })
-    // builder.addCase(getMenu.pending, onPending)
-    // builder.addCase(getMenu.rejected, onRejection)
   }
 })
 

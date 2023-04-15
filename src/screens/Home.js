@@ -9,6 +9,7 @@ import { getMenu, sortByPrice, sortByRatings } from "../redux/slices/menu"
 import { setError } from "../redux/slices/error"
 import { addToCart } from "../redux/slices/cart"
 import Card from "../components/Card"
+import Success from "../components/Success"
 import Loader from "../components/Loader"
 import { AiOutlineCloseCircle } from "react-icons/ai"
 
@@ -79,6 +80,7 @@ const Home = () => {
   console.log("category: ", category)
   return (
     <Layout>
+      <Success />
       {isModal ? (
         <div className="modal-container">
           <div className="pizza-modal">
@@ -153,28 +155,40 @@ const Home = () => {
         </div>
       ) : null}
       <div className="card-container">
-      <div className="dropdown-div">
-        <select
-          name="sortBy"
-          id="sortBy"
-          onChange={(e) => sortList(e.target.value)}
-          className="dropdown-element"
-        >
-          <option value="none" className="dropdown-option">Sort By</option>
-          <option value="price" className="dropdown-option">Price</option>
-          <option value="ratings" className="dropdown-option">Ratings</option>
-        </select>
-        <select
-          name="category"
-          id="category"
-          onChange={(e) => setCategory(e.target.value)}
-          className="dropdown-element"
-        >
-          <option value="all" className="dropdown-option">Filter</option>
-          <option value="veg" className="dropdown-option">Veg</option>
-          <option value="nonveg" className="dropdown-option">Non-Veg</option>
-        </select>
-      </div>
+        <div className="dropdown-div">
+          <select
+            name="sortBy"
+            id="sortBy"
+            onChange={(e) => sortList(e.target.value)}
+            className="dropdown-element"
+          >
+            <option value="none" className="dropdown-option">
+              Sort By
+            </option>
+            <option value="price" className="dropdown-option">
+              Price
+            </option>
+            <option value="ratings" className="dropdown-option">
+              Ratings
+            </option>
+          </select>
+          <select
+            name="category"
+            id="category"
+            onChange={(e) => setCategory(e.target.value)}
+            className="dropdown-element"
+          >
+            <option value="all" className="dropdown-option">
+              Filter
+            </option>
+            <option value="veg" className="dropdown-option">
+              Veg
+            </option>
+            <option value="nonveg" className="dropdown-option">
+              Non-Veg
+            </option>
+          </select>
+        </div>
         {/* <div className="card-list"> */}
         {menuItems.length ? (
           menuItems.map((item) => {
@@ -188,7 +202,6 @@ const Home = () => {
         ) : (
           <Loader />
         )}
-        {/* </div> */}
       </div>
     </Layout>
   )
