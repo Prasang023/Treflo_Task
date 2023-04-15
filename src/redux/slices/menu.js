@@ -22,13 +22,37 @@ export const getMenu = createAsyncThunk(
 )
 
 export const menuSlice = createSlice({
-  name: "mennu",
+  name: "menu",
   initialState: {
     loading: false,
     error: null,
     menuItems: []
   },
-  reducers: {},
+  reducers: {
+    sortByPrice: (state, action) => {
+      var arr = state.menuItems
+      arr.sort(function (a, b) {
+        var keyA = a.price,
+          keyB = b.price
+        if (keyA < keyB) return -1
+        if (keyA > keyB) return 1
+        return 0
+      })
+      state.menuItems = arr
+    },
+    sortByRatings: (state, action) => {
+      var arr = state.menuItems
+      console.log(arr[0])
+      arr.sort(function (a, b) {
+        var keyA = parseFloat(a.rating),
+          keyB = parseFloat(b.rating)
+        if (keyA > keyB) return -1
+        if (keyA < keyB) return 1
+        return 0
+      })
+      state.menuItems = arr
+    }
+  },
   extraReducers: (builder) => {
     function onPending(state, action) {
       state.loading = true
@@ -47,5 +71,5 @@ export const menuSlice = createSlice({
   }
 })
 
-// export const { setError, clearError } = errorSlice.actions;
+export const { sortByPrice, sortByRatings } = menuSlice.actions
 export default menuSlice.reducer

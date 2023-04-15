@@ -1,7 +1,14 @@
+
 /* .App {
   text-align: center;
 }
-
+Colors{
+ aliceBlue: #e9f1f7
+ yellow: FEC532;
+ black: 2B2437
+ bg: FDFBF8
+ front: FEFFFE
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +43,114 @@
     transform: rotate(360deg);
   }
 } */
+
+body {
+  background-color: #FDFBF8;
+  overflow-x: hidden;
+}
+
+.layout-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.btnt{
+  background-color: #FEC532;
+  border-style: none;
+  border-radius: 45px;
+  align-items: center;
+  text-align: center;
+  padding: 5px 12px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.btn-circle{
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.pizza-modal{
+  background-color: #FDFBF8;
+  /* position: absolute; */
+  z-index: 20; 
+  /* width: 200px; */
+  /* height: 200px; */
+  border-radius: 45px;
+  padding: 50px;
+}
+
+.modal-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background-color: rgba(128,128,128,0.5);
+}
+
+.modal-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-container{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 50px;
+  align-items: center;
+  background-color: #FEC532;
+  margin-bottom: 20px
+}
+
+.navbar-container img{
+  cursor: pointer;
+}
+
+.navbar-list-container{
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-list-container p{
+  margin: 0 10px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navbar-icons{
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.dropdown-element{
+  background-color: #FEC532;
+  border-style: none;
+  border-radius: 45px;
+  align-items: center;
+  text-align: center;
+  padding: 5px 12px;
+  font-weight: 500;
+  font-size: 15px;
+  margin: 0 10px;
+}
+
+.dropdown-option{
+  background-color: #FFFFFF;
+  border-style: none;
+  border-radius: 45px;
+  align-items: center;
+  text-align: center;
+  padding: 5px 8px;
+  font-weight: 500;
+  font-size: 15px;
+  margin: 5px 10px;
+}

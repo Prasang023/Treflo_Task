@@ -1,0 +1,14 @@
+.modal-select{
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-div{
+    /* display: flex;
+    justify-content: flex-end;
+     */
+     width: 100%;
+     display: flex;
+     justify-content: flex-end;
+     margin-right: 100px;
+  }
