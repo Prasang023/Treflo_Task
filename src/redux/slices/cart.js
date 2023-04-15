@@ -40,8 +40,12 @@ export const cartSlice = createSlice({
             tmparr[i].quantity--
             state.totalAmt = state.totalAmt - parseInt(tmparr[i].price)
           } else {
-            tmparr = tmparr.filter((item, key) => key !== i)
-            state.totalAmt = state.totalAmt - parseInt(tmparr[i].price)
+            // tmparr = tmparr.filter((item, key, x=i) => key !== x)
+            tmparr = []
+            for (var j = 0; j < state.cartItems.length; j++) {
+              if (j !== i) tmparr.push(state.cartItems[j])
+            }
+            state.totalAmt = state.totalAmt - parseInt(state.cartItems[i].price)
           }
           break
         }
