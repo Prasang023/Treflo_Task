@@ -8,9 +8,6 @@ const CartCard = ({ pizza }) => {
     img_url,
     id,
     name,
-    description,
-    isVeg,
-    rating,
     price,
     quantity,
     selectedSize,
@@ -61,14 +58,3 @@ const CartCard = ({ pizza }) => {
 }
 
 export default CartCard
-
-{
-  /* id(pin):3
-name(pin):"Pepper Barbecue & Onion"
-description(pin):"A classic favorite with pepper barbeque chicken & onion"
-isVeg(pin):false
-rating(pin):4.5
-price(pin):435
-img_url(pin):"https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg"
- */
-}

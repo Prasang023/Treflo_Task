@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import CartCard from "../components/CartCard"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 
 const Cart = () => {
   const { cartItems, totalAmt } = useSelector((state) => state.cart)
@@ -10,7 +10,7 @@ const Cart = () => {
       <div className="cart-container">
         <div className="cart-list">
           <h4>Cart Items</h4>
-          {cartItems.length == 0 ? (
+          {cartItems.length === 0 ? (
             <h6>No Items added to Cart</h6>
           ) : (
             cartItems.map((item) => <CartCard pizza={item} />)
@@ -18,7 +18,7 @@ const Cart = () => {
         </div>
         <div className="cart-summary">
           <h4>Cart Summary</h4>
-          {cartItems.length == 0 ? (
+          {cartItems.length === 0 ? (
             <div>No Items added to cart</div>
           ) : (
             <>

@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react"
-import { AiOutlinePlus } from "react-icons/ai"
-// import { Button, Space, Modal, Input } from "antd"
 import { useDispatch, useSelector } from "react-redux"
 import Error from "../components/Error"
-import { useNavigate } from "react-router-dom"
 import Layout from "../components/Layout"
 import { getMenu, sortByPrice, sortByRatings } from "../redux/slices/menu"
 import { setError } from "../redux/slices/error"
@@ -45,8 +42,8 @@ const Home = () => {
     var tmpItem = pizza
     console.log("ran func")
     var sz = tmpItem.selectedToppings.length
-    tmpItem.selectedToppings = tmpItem.selectedToppings.filter((i) => i != tkey)
-    if (tmpItem.selectedToppings.length == sz) {
+    tmpItem.selectedToppings = tmpItem.selectedToppings.filter((i) => i !== tkey)
+    if (tmpItem.selectedToppings.length === sz) {
       tmpItem.selectedToppings.push(tkey)
       tmpItem.selectedToppings.sort()
       setPizza(tmpItem)
@@ -198,6 +195,7 @@ const Home = () => {
               return <Card {...item} key={item.id} openModal={openModal} />
             else if (category === "all")
               return <Card {...item} key={item.id} openModal={openModal} />
+              return null
           })
         ) : (
           <Loader />

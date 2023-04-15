@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import Badge from "./Badge"
 import { BsStar } from "react-icons/bs"
 import { useDispatch, useSelector } from "react-redux"
@@ -22,7 +22,7 @@ const Card = ({
   const getNumber = () => {
     n = 0
     for (let i = 0; i < cartItems.length; i++) {
-      if (cartItems[i].id == id) n=n+cartItems[i].quantity
+      if (cartItems[i].id === id) n=n+cartItems[i].quantity
     }
     
   }
